@@ -1,0 +1,70 @@
+使用gdb调试
+gdb bomb
+disas phase1, disas secretphase
+在bomb函数前打断点：b #【行号】
+调试：layout asm
+          stepi
+出现disolved说明成功，出现调用bomb函数说明失败
+
+
+phase1：
+x/s 【mov后面的第一串，不要$符号】
+
+phase2：
+mov    %rsp,%rbx   把rsp赋给rbx
+je：成立则跳转到
+jne：不成立则跳转到
+六个数字，第一个rsp=1
+然后看关键位置的运算
+gpt
+
+* 提交时一定要从phase_1从头开始，不能只提交一个中间的phase
+* 提交时后面一定要加一个空行
+
+phase3：
+switch
+stepi命令
+结果是两个数
+gpt出来，所有情况枚举尝试
+
+phase4：
+两个数字
+disas func4
+让ai改写成C语言代码
+后面一个随便输入，前面一个打印最后cmp的值
+也有可能两个数字反过来
+* phase3和phase4都有不止一种正确答案
+
+phase5：
+①循环加密：
+长度为6的字符串，一共两种情况
+oilers：JDOEFG
+flyers：ionefg
+②链表
+
+phase6：
+mov 地址+变量
+x/30w 【地址】
+六个数字排序，返回对应的序号1~6，然后答案：
+升序；降序；7-升序；7-降序
+四选一
+
+secret phase：
+phase4答案后添加 DrEvil 进入
+对照二叉树，按照相同逻辑获得返回值
+对应关系如下（右侧为返回值，左侧为答案）：
+1=0
+6=0
+7=4
+8=0
+20=2
+22=2
+35=6
+36=0
+40=1
+45=1
+47=5
+50=1
+99=3
+107=3
+1001=7
