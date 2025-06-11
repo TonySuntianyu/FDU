@@ -2,7 +2,8 @@
 FDU软件工程学习笔记
 ## Contents：
 - 1. ICS（Introduction to Computer Systems）/ CSAPP
-- 2. 集合与图论 (Set and Graph Theory)
+- 2. 集合与图论 （Set and Graph Theory）
+- 3. OOP（Object Oriented Programming）
 
 
 ## 1. ICS
@@ -13,3 +14,14 @@ FDU软件工程学习笔记
 - 集合论部分笔记
 - 组合数学部分笔记
 - 图论部分笔记
+
+### 3. OOP
+- Lab1
+- Lab2
+- Lab3
+- Lab4
+- Lab5
+- Lab6
+- Lab7（PJ）
+*注*：Lab2到Lab7为一整个棋类游戏项目，体现了代码的演进过程
+- pre PPT
