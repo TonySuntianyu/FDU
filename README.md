@@ -5,7 +5,6 @@ FDU软件工程学习笔记
 - 2. 集合与图论 （Set and Graph Theory）
 - 3. OOP（Object Oriented Programming）
 - 4. 数据库（Database System Concepts）
-- 5. 软件工程（Software Engineering）
 
 
 ## 1. ICS
@@ -32,5 +31,3 @@ FDU软件工程学习笔记
 - Lab —— 数据库应用接口
 - PJ —— 车辆维修管理系统（施工中）
 
-## 5. 软件工程
-- 课程PJ（模拟大众点评的点餐平台）
