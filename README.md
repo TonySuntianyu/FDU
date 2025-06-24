@@ -10,6 +10,7 @@ FDU软件工程学习笔记
 ## 1. ICS
 - bomblab 解题思路
 - attacklab 实验报告
+- ICSV2（SlidesConclution）
 
 ## 2. 集合与图论
 - 集合论部分笔记
@@ -26,7 +27,10 @@ FDU软件工程学习笔记
 - Lab7（PJ）
 **注**：Lab2到Lab7为一整个棋类游戏项目，体现了代码的演进过程
 - pre PPT
+- SlidesConclution V1&V2
 
 ## 4. 数据库
 - Lab —— 数据库应用接口
+- concepts——中英文概念对照
+- DB（Conclution）
 
