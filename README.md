@@ -24,7 +24,7 @@ FDU软件工程学习笔记
 - Lab4
 - Lab5
 - Lab6
-- Lab7（PJ）、
+- Lab7（PJ）
 - Lab代码质量分析
 **注**：Lab2到Lab7为一整个棋类游戏项目，体现了代码的演进过程
 - pre PPT
