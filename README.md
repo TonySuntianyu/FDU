@@ -9,6 +9,7 @@ FDU软件工程学习笔记
 - 6. 数据结构（Data Structure）
 - 7. 数学建模初赛（Mathematical Modeling Coontest）
 - 8. 软件设计（Software Design）
+- 9. 操作系统（Operating Systems）
 
 ## 1. ICS
 - bomblab 解题思路
@@ -56,3 +57,8 @@ FDU软件工程学习笔记
 ## 8. 软件设计
 - 软件设计综合知识库
 - 知识库索引
+
+## 9. 操作系统
+- 知识整理————虚拟化
+- 知识整理————并发
+- 知识整理————持久性
