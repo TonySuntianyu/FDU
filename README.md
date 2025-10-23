@@ -7,6 +7,7 @@ FDU软件工程学习笔记
 - 4. 数据库（Database System Concepts）
 - 5. C语言程序设计（C Language Programming）
 - 6. 数据结构（Data Structure）
+- 7. 数学建模初赛（Mathematical Modeling Coontest）
 
 ## 1. ICS
 - bomblab 解题思路
@@ -45,3 +46,6 @@ FDU软件工程学习笔记
 - Lab2
 - Lab3
 - Lab4
+
+## 7. 数模赛初赛
+- 论文与部分程序代码
