@@ -10,6 +10,7 @@ FDU软件工程学习笔记
 - 7. 数学建模初赛（Mathematical Modeling Coontest）
 - 8. 软件设计（Software Design）
 - 9. 操作系统（Operating Systems）
+- 10. 计算机网络（Computer Network）
 
 ## 1. ICS
 - bomblab 解题思路
@@ -63,3 +64,6 @@ FDU软件工程学习笔记
 - 知识整理————并发
 - 知识整理————持久性
 - 操作系统知识整理
+
+## 10.计算机网络
+- 一些作业与解析
