@@ -1,0 +1,64 @@
+路径规划系统 - 项目文件说明
+=====================================
+
+本项目已完成中期检查要求的所有内容。
+
+一、代码文件
+-----------
+1. Graph.h/cpp          - 图数据结构（邻接表实现）
+2. Dijkstra.h/cpp        - Dijkstra最短路径算法
+3. FileParser.h/cpp      - 文件解析器（解析需求文件和地图文件）
+4. TrafficCalculator.h/cpp - 堵车系数计算器
+5. main.cpp              - 主程序入口
+
+二、文档文件
+-----------
+1. 中期文档.md          - 中期检查文档（Markdown格式，需转换为PDF）
+2. README.md            - 项目说明文档
+
+三、编译文件
+-----------
+1. compile.sh           - Linux/macOS编译脚本
+2. compile.bat          - Windows编译脚本
+3. Makefile             - Make编译文件
+
+四、使用步骤
+-----------
+1. 编译项目：
+   - Windows: 运行 compile.bat 或使用 make
+   - Linux/macOS: 运行 ./compile.sh 或使用 make
+
+2. 运行程序：
+   ./path_planner <测试用例目录>
+   
+   例如：
+   ./path_planner Test_Cases/eazy_test_cases/shanghai_test_cases/case1_simple
+
+3. 输出格式：
+   每行输出一个时间点的最优路径，格式为：
+   起点-->中间点1-->中间点2-->...-->终点
+
+五、中期检查提交
+-----------
+1. 将 中期文档.md 转换为PDF格式（可使用Markdown转PDF工具）
+2. 将所有源代码文件打包为zip格式
+3. 按照要求命名：
+   - 文档：学号_姓名_中期文档.pdf
+   - 代码：学号_姓名_中期代码.zip
+
+六、核心功能
+-----------
+✅ 自定义Graph类（邻接表实现）
+✅ Dijkstra算法实现（使用优先队列优化）
+✅ 堵车系数计算公式
+✅ 多时间点动态地图处理
+✅ CSV和TXT文件解析
+✅ 路径回溯和输出
+
+七、注意事项
+-----------
+- 代码使用C++17标准编写
+- Windows和Linux/macOS都支持
+- 确保测试用例目录中包含demand.txt和map_*.csv文件
+- 如果路径不存在，程序会输出错误信息
+
