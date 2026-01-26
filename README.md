@@ -11,6 +11,7 @@ FDU软件工程学习笔记
 - 8. 软件设计（Software Design）
 - 9. 操作系统（Operating Systems）
 - 10. 计算机网络（Computer Network）
+- 11. DCD（Digital Components Design）
 
 ## 1. ICS
 - bomblab 解题思路
@@ -77,3 +78,15 @@ FDU软件工程学习笔记
 
 ## 10. 计算机网络
 - 一些作业与解析
+- check0
+- check1
+- check2
+- check3
+- check4
+- check5
+
+## 11. DCD
+- lab1
+- lab2
+- lab3
+- pj
