@@ -1,0 +1,5 @@
+editor\workspace\WorkspaceTest.class
+editor\logging\LoggerTest.class
+editor\command\CommandParserTest.class
+editor\editor\TextEditorTest.class
+editor\workspace\WorkspaceMementoTest.class
