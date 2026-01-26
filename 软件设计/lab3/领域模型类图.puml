@@ -1,0 +1,214 @@
+@startuml
+' Lab3 快递物流管理系统 - 领域模型类图
+' 静态领域模型定义
+
+package "包裹相关" #E1F5FF {
+  class 运单 {
+    +运单号: String {唯一标识}
+    +创建时间: DateTime
+    +创建网点: ServicePoint
+    +目的网点: ServicePoint
+  }
+
+  class 包裹 {
+    +包裹编号: String {唯一标识}
+    +运单号: String
+    +当前状态: PackageStatus
+    +当前位置: String
+    +下一站: String
+    +预计到达时间: DateTime
+    +重量: Double {单位：kg}
+    +尺寸: String {长×宽×高，单位：cm}
+    +收件人地址: String
+    +收件人联系方式: String
+    +发件人信息: String
+    +创建时间: DateTime
+    +异常状态: Boolean
+    +异常原因: String
+  }
+
+  class 包裹轨迹 {
+    +轨迹编号: String {唯一标识}
+    +位置: String
+    +状态: PackageStatus
+    +时间: DateTime
+    +操作类型: OperationType
+  }
+}
+
+package "站点相关" #E1F5FF {
+  class 网点 {
+    +网点编号: String {唯一标识}
+    +网点名称: String
+    +地址: String
+    +类型: ServicePointType
+  }
+
+  class 中转站 {
+    +中转站编号: String {唯一标识}
+    +中转站名称: String
+    +地址: String
+    +处理能力: Integer {可选，每日处理包裹数量上限}
+  }
+}
+
+package "运输相关" #E1F5FF {
+  class 车辆 {
+    +车辆编号: String {唯一标识}
+    +车牌号: String
+    +容量: Double {单位：kg}
+    +当前位置: String
+    +下一站: String
+    +预计到达时间: DateTime
+    +当前状态: VehicleStatus
+  }
+
+  class 司机 {
+    +司机编号: String {唯一标识}
+    +姓名: String
+    +联系方式: String
+    +驾驶证号: String {可选}
+  }
+
+  class 运输任务 {
+    +任务编号: String {唯一标识}
+    +起点: String
+    +终点: String
+    +创建时间: DateTime
+    +状态: TaskStatus
+    +实际出发时间: DateTime
+    +实际到达时间: DateTime
+  }
+}
+
+package "路径规划相关" #E1F5FF {
+  class 路径规划 {
+    +规划编号: String {唯一标识}
+    +起点: String
+    +终点: String
+    +规划路径: List<String> {站点序列}
+    +预计总时间: Integer {单位：小时}
+    +创建时间: DateTime
+    +是否当前有效: Boolean
+  }
+
+  class 路径规划历史 {
+    +历史记录编号: String {唯一标识}
+    +变更原因: String
+    +变更时间: DateTime
+    +变更位置: String
+    +变更操作员: String {可选}
+  }
+}
+
+package "分拣相关" #E1F5FF {
+  class 分拣任务 {
+    +任务编号: String {唯一标识}
+    +分拣地点: String
+    +创建时间: DateTime
+    +完成时间: DateTime
+    +状态: SortingTaskStatus
+  }
+}
+
+' ============================================
+' 关系定义
+' ============================================
+
+' 包裹相关关系
+运单 "1" *-- "1" 包裹 : 包含（组合）
+包裹 "1" *-- "*" 包裹轨迹 : 记录（组合）
+包裹 "1" --> "*" 路径规划历史 : 变更历史
+包裹 "*" <--> "*" 运输任务 : 运输（关联）
+包裹 "*" <--> "*" 分拣任务 : 分拣（关联）
+包裹 "*" --> "1" 路径规划 : 规划（关联）
+
+' 站点相关关系
+网点 "1" --> "*" 运单 : 创建/接收
+网点 "1" --> "*" 分拣任务 : 执行分拣
+中转站 "1" --> "*" 分拣任务 : 执行分拣
+
+' 运输相关关系
+车辆 "1" --> "*" 运输任务 : 执行
+司机 "1" --> "*" 车辆 : 驾驶
+运输任务 "*" --> "1" 路径规划 : 依据
+
+' 路径规划相关关系
+路径规划历史 "*" --> "1" 路径规划 : 原规划
+路径规划历史 "*" --> "1" 路径规划 : 新规划
+
+' ============================================
+' 枚举类型定义
+' ============================================
+
+enum PackageStatus {
+  已揽收
+  分拣中
+  待运输
+  运输中
+  已到达
+  异常
+}
+
+enum OperationType {
+  揽收
+  分拣
+  装车
+  卸车
+  到达
+  异常
+}
+
+enum ServicePointType {
+  寄件网点
+  收件网点
+  综合网点
+}
+
+enum VehicleStatus {
+  空闲
+  运输中
+  维护中
+  已停用
+}
+
+enum TaskStatus {
+  待分配
+  已分配
+  运输中
+  已完成
+  已取消
+}
+
+enum SortingTaskStatus {
+  待处理
+  处理中
+  已完成
+  异常
+}
+
+' 枚举类型关联
+包裹 ..> PackageStatus
+包裹轨迹 ..> PackageStatus
+包裹轨迹 ..> OperationType
+网点 ..> ServicePointType
+车辆 ..> VehicleStatus
+运输任务 ..> TaskStatus
+分拣任务 ..> SortingTaskStatus
+
+note right of 包裹
+  核心业务对象
+  记录包裹全生命周期状态
+end note
+
+note right of 路径规划历史
+  记录路径规划变更历史
+  包括变更原因、时间、位置
+end note
+
+note right of 车辆
+  支持查询当前状态
+  当前位置、下一站、预计到达时间
+end note
+
+@enduml
