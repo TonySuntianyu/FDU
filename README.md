@@ -12,6 +12,7 @@ FDU软件工程学习笔记
 - 9. 操作系统（Operating Systems）
 - 10. 计算机网络（Computer Network）
 - 11. DCD（Digital Components Design）
+- 12. 人工智能的数学基础（Mathematical Foundation for AI）
 
 ## 1. ICS
 - bomblab 解题思路
@@ -78,6 +79,7 @@ FDU软件工程学习笔记
 
 ## 10. 计算机网络
 - 一些作业与解析
+- 知识点整理
 - check0
 - check1
 - check2
@@ -90,3 +92,7 @@ FDU软件工程学习笔记
 - lab2
 - lab3
 - pj
+
+## 12. 人工智能的数学基础
+- ppt合并复习版
+- 期末复习（思维导图）
